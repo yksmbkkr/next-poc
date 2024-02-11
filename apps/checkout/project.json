@@ -1,0 +1,12 @@
+{
+  "name": "checkout",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/checkout",
+  "projectType": "application",
+  "targets": {
+    "server": {
+      "port": 4002
+    }
+  },
+  "tags": []
+}

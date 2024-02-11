@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
@@ -7,8 +5,8 @@ const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 const remotes = (isServer) => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
+    home: `home@http://localhost:4001/_next/static/${location}/remoteEntry.js`,
     shop: `shop@http://localhost:4003/_next/static/${location}/remoteEntry.js`,
-    checkout: `checkout@http://localhost:4002/_next/static/${location}/remoteEntry.js`,
   };
 };
 
@@ -24,11 +22,11 @@ const nextConfig = {
   webpack(config, options) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: 'home',
+        name: 'checkout',
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
-          './nav': './components/nav.js',
-          './home': './pages/index.js',
+          './title': './components/exposedTitle.js',
+          './checkout': './pages/checkout.js',
           './pages-map': './pages-map.js',
         },
         remotes: remotes(options.isServer),

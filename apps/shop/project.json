@@ -1,0 +1,12 @@
+{
+  "name": "shop",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/shop",
+  "projectType": "application",
+  "targets": {
+    "server": {
+      "port": 4003
+    }
+  },
+  "tags": []
+}
