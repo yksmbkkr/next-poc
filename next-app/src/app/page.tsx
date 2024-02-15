@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div className="container">
       <section className="section">
-        <Link className="btn btn-primary" href="/verizon">
-          Verizon Home
+        <Link className="btn btn-primary" href="/company">
+          Company Home
         </Link>
       </section>
     </div>

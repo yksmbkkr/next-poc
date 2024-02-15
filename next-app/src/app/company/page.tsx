@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const VerizonHome = () => {
+const CompanyHome = () => {
   return (
     <main>
       <Link href="/" className="m-3 btn btn-primary">
@@ -10,7 +10,7 @@ const VerizonHome = () => {
   );
 };
 
-// function VerizonHome() {
+// function CompanyHome() {
 //   return (
 //     <main>
 //       <p>TEST</p>
@@ -18,4 +18,4 @@ const VerizonHome = () => {
 //   );
 // }
 
-export default VerizonHome;
+export default CompanyHome;
