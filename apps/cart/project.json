@@ -1,0 +1,36 @@
+{
+  "name": "cart",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cart",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/cart"
+      }
+    },
+    "dev": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "cart:build",
+        "dev": true,
+        "port": 3002
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "cart:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "cart:build:production",
+          "dev": false
+        }
+      }
+    }
+  },
+  "tags": []
+}
